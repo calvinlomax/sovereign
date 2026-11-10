@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "sovereign-core",
+  "version": "0.1.0",
+  "economy": {
+    "laborParticipation": 0.6,
+    "foodPerPerson": 0.12,
+    "energyPerPerson": 0.04,
+    "sectorEnergy": 0.25,
+    "matterPerIndustry": 0.1,
+    "foodYield": 2.4,
+    "energyYield": 4,
+    "miningYield": 1.3,
+    "knowledgeYield": 1.2,
+    "computationPerLevel": 1,
+    "automationLabor": 0.8,
+    "serviceDemand": 0.08
+  },
+  "population": { "birthRate": 0.018, "deathRate": 0.01, "shortageMortality": 0.08 },
+  "construction": { "matterCost": 8, "energyCost": 5, "workCost": 10 },
+  "technologies": [
+    { "id": "efficient-grids", "name": "Efficient Energy Grids", "cost": 35, "prerequisites": [], "effect": "energyYield", "multiplier": 1.2 },
+    { "id": "closed-loop-agriculture", "name": "Closed-loop Agriculture", "cost": 45, "prerequisites": [], "effect": "foodYield", "multiplier": 1.2 },
+    { "id": "distributed-computing", "name": "Distributed Computing", "cost": 65, "prerequisites": ["efficient-grids"], "effect": "computationPerLevel", "multiplier": 1.4 },
+    { "id": "scientific-networks", "name": "Scientific Networks", "cost": 85, "prerequisites": ["distributed-computing"], "effect": "knowledgeYield", "multiplier": 1.3 }
+  ]
+}

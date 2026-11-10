@@ -1,0 +1,26 @@
+{
+  "name": "sovereign-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Deterministic, headless civilization simulation for Sovereign: Beyond the Stars",
+  "engines": { "node": ">=22.12.0" },
+  "exports": {
+    ".": "./dist/packages/simulation/src/index.js",
+    "./worldgen": "./dist/packages/worldgen/src/index.js",
+    "./social-systems": "./dist/packages/social-systems/src/index.js",
+    "./experiments": "./dist/packages/experiments/src/index.js",
+    "./persistence": "./dist/packages/persistence/src/index.js",
+    "./shared-types": "./dist/packages/shared-types/src/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "npm run typecheck && npm test && npm run build",
+    "demo": "npm run build && node dist/apps/headless/src/main.js"
+  },
+  "dependencies": { "zod": "^4.0.0" },
+  "devDependencies": { "@types/node": "^22.0.0", "typescript": "~5.9.3", "vite": "7.3.1", "vitest": "4.0.18" }
+}
